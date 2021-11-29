@@ -21,11 +21,15 @@ public class MethodReferencesExamples {
         MethodReferencesExamples myApp = new MethodReferencesExamples();
 
         // Calling the method mergeThings with a lambda expression
+        System.out.println(MethodReferencesExamples.mergeThings("Hello ", "World", (a,b) -> a+b));
 
         // references to a static method (use appendStrings)
+        System.out.println(MethodReferencesExamples.mergeThings("Hello ", "World", MethodReferencesExamples::appendStrings));
 
         // references to a instance method (use appendStrings2)
+        System.out.println(MethodReferencesExamples.mergeThings("Hello ", "World", myApp::appendStrings2));
 
         // references to a static method (use concat method of the String class)
+        System.out.println(MethodReferencesExamples.mergeThings("Hello ", "World", String::concat));
     }
 }
