@@ -13,8 +13,9 @@ public class MethodReferenceTest {
         // 1. Comparator ayrıca oluşturulup, iki tane Person parametresi gönderilerek
         // compareTo metoduyla sıralanması sağlanabilir.
         class PersonAgeComparator implements Comparator<Person> {
-            public int compare(Person a, Person b) {
-                return a.getBirthday().compareTo(b.getBirthday());
+            @Override
+            public int compare(Person o1, Person o2) {
+                return 0;
             }
         }
         Arrays.sort(personListAsArray, new PersonAgeComparator());
